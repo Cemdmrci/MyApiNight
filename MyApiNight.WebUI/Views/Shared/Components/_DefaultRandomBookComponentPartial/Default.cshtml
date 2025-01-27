@@ -1,0 +1,48 @@
+﻿@model GetRandomBookDto
+<section id="best-selling" class="leaf-pattern-overlay">
+	<div class="corner-pattern-overlay"></div>
+	<div class="container">
+		<div class="row justify-content-center">
+
+			<div class="col-md-8">
+
+				<div class="row">
+
+					<div class="col-md-6">
+						<figure class="products-thumb">
+							<img src="@Model.ImageUrl" alt="book" class="single-image">
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<div class="product-entry">
+							<h2 class="section-title divider">En Çok Satan Kitabımız</h2>
+
+							<div class="products-content">
+								<div class="author-name"> Yazarın Adı-Soyadı: @Model.WriterName</div>
+								<h3 class="item-title">Kitabın Adı: @Model.BookName</h3>
+								<p>
+							Kategorisi: @Model.CategoryName
+								</p>
+								<div class="card-footer text-muted text-end">
+								Sayfa Sayısı:@Model.PageCount
+								</div>
+								<div class="btn-wrap">
+									<a href="#" class="btn-accent-arrow">
+										Şimdi Satın alabilirsiniz... <i class="icon icon-ns-arrow-right"></i>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<!-- / row -->
+
+			</div>
+
+		</div>
+	</div>
+</section>
+

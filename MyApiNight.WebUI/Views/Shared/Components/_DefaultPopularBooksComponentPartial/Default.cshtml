@@ -1,0 +1,40 @@
+﻿@model List<GetPopularBooksDto>
+<section id="popular-books" class="bookshelf py-5 my-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="section-header align-center">
+					<h2 class="section-title">Popüler Kitaplarımız</h2>
+				</div>
+
+				<ul class="tabs">
+					<li data-tab-target="#all-categories" class="active tab">Tümü</li>
+					<li data-tab-target="#personal-development" class="tab">Kişisel Gelişim</li>
+					<li data-tab-target="#novel" class="tab">Roman</li>
+					<li data-tab-target="#history" class="tab">Tarih</li>
+					<li data-tab-target="#foreign-book" class="tab">Yabancı Kitap</li>
+					<li data-tab-target="#science" class="tab">Bilim</li>
+					<li data-tab-target="#software" class="tab">Yazılım</li>
+				</ul>
+
+				<div class="tab-content">
+					@await Component.InvokeAsync("GetAllCategoriesComponentPartial")
+					@await Component.InvokeAsync("PersonelDevelopmentComponentPartial")
+					@await Component.InvokeAsync("_NovelComponentPartial")
+					@await Component.InvokeAsync("HistoryComponentPartial")
+					@await Component.InvokeAsync("ForeignBookComponentPartial")
+					@await Component.InvokeAsync("ScienceComponentPartial")
+					@await Component.InvokeAsync("SoftwareComponentPartial")
+				</div>
+
+			</div>
+
+		</div>
+
+	</div><!--inner-tabs-->
+
+
+
+</section>
+

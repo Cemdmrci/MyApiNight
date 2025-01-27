@@ -1,0 +1,38 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="container">
+	<h1 style="text-align:center; color:black">Öne Çıkarılan Kitaplar Sayfası</h1>
+	<table class="table table-striped" style="color:black">
+		<tr>
+			<th>#</th>
+			<th>KİTAP ADI</th>
+			<th>AÇIKLAMA</th>
+			<th>KİTAP GÖRSELİ</th>
+			<th>SEÇENEKLER</th>
+
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.FeatureId</td>
+				<td>@item.BookName</td>
+				<td>@item.Description</td>
+				<td>
+					<img src="@item.ImageUrl" style="height:200px; width:auto" />
+				</td>
+				<td>
+					<a href="/Admin/Feature/DeleteFeature/@item.FeatureId" class="btn btn-danger">Sil</a>
+					<a href="/Admin/Feature/UpdateFeature/@item.FeatureId" class="btn btn-danger">Güncelle</a>
+				</td>
+			</tr>
+		}
+	</table>
+	<a href="/Admin/Feature/CreateFeature" class="btn btn-primary">Yeni Kitap Ekle </a>
+</div>
+<br />
+

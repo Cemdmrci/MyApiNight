@@ -1,0 +1,52 @@
+﻿@model List<GetLast4BooksDto>
+<section id="featured-books" class="py-5 my-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="section-header align-center">
+
+					<h2 class="section-title">Eklenen Son Kitaplarımız</h2>
+				</div>
+
+				<div class="product-list" data-aos="fade-up">
+					<div class="row">
+						@foreach (var item in Model)
+						{
+							<div class="col-md-3">
+								<div class="product-item">
+									<figure class="product-style">
+										<img src="@item.ImageUrl" style="height:500px; width:auto" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">
+											@item.CategoryName
+										</button>
+									</figure>
+									<figcaption>
+										<h3>@item.BookName</h3>
+										<span>@item.WriterName</span>
+										<div class="item-price">@item.Price₺</div>
+									</figcaption>
+								</div>
+							</div>
+						}
+					</div><!--ft-books-slider-->
+				</div><!--grid-->
+
+
+			</div><!--inner-content-->
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="btn-wrap align-right">
+					<a href="#" class="btn-accent-arrow">
+						Buradan Görüntüleyebilirsiniz <i class="icon icon-ns-arrow-right"></i>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+

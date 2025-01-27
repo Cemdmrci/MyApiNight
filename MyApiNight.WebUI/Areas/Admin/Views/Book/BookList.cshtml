@@ -1,0 +1,38 @@
+﻿@model List<ResultBookDto>
+@{
+    ViewData["Title"] = "BookList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="container">
+	<h1 style="text-align:center; color:black">Kitaplarım</h1>
+	<table class="table table-striped" style="color:black">
+		<tr>
+			<th>#</th>
+			<th>KİTAP ADI</th>
+			<th>FİYATI</th>
+			<th>SAYFA SAYISI</th>
+			<th>GÖRSEL</th>
+			<th>SEÇENEKLER</th>
+	
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.BookID</td>
+				<td>@item.BookName</td>
+				<td>@item.Price₺</td>
+				<td>@item.PageCount</td>
+				<td>
+					<img src="@item.ImageUrl" style="height:200px; width:auto" />
+				</td>
+				<td><a href="/Admin/Book/DeleteBook/@item.BookID" class="btn btn-danger">Sil</a>
+				<a href="/Admin/Book/UpdateBook/@item.BookID" class="btn btn-danger">Güncelle</a></td>
+			</tr>
+		}
+	</table>
+	<a href="/Admin/Book/CreateBook" class="btn btn-primary">Yeni Kitap Ekle </a>
+</div>
+<br />
+

@@ -1,0 +1,32 @@
+﻿@model List<GetWriterListDto>
+<section id="special-offer" class="bookshelf pb-5 mb-5">
+
+	<div class="section-header align-center">
+        <h2 class="section-title">Yazarlarımız</h2>
+    <div class="container">
+        <div class="row">
+            <div class="inner-content">
+                <div class="product-list" data-aos="fade-up">
+                    <div class="grid product-grid">
+                        @foreach (var item in Model)
+                        {
+                            <div class="product-item">
+                                <figure class="product-style">
+                                        <img src="@item.ImageUrl" style="height:500px; width:auto" class="author-image" alt="Books">
+                                </figure>
+                                <figcaption>
+                                    <h3>@item.WriterNameSurname</h3>
+                                    <span>Kitap Sayısı: @item.BookCount</span>
+					
+						</figcaption>
+                        
+					</div>
+                    }
+				</div>
+			</div><!--inner-content-->
+		</div>
+	</div>
+    </div>
+    </div>
+</section>
+

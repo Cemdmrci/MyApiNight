@@ -1,0 +1,30 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Kitap Adı</th>
+                <th>Görsel</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FeatureId</td>
+                    <td>@item.BookName</td>
+                    <td>@item.ImageUrl</td>
+                </tr>
+            }
+        </table>
+        <a href="/Features/FeatureList" class="btn btn-info"></a>
+    </div>
+</form>
+
